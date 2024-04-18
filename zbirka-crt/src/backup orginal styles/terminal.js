@@ -123,10 +123,10 @@ const executor = commands => (cmd, ...args) => cb => {
   try {
     commands[cmd]
       ? cb(commands[cmd](...args) + '\n')
-      : (cmd.length ? cb(`Command '${cmd}' not recognized. Try 'help'.\nCommand '${cmd}' not recognized. Try 'help'.\n`) : cb(`NOLINE`));
+      : (cmd.length ? cb(`Ne poznam ukaza '${cmd}'. Poizkusite s 'pomoc'.\nCommand '${cmd}' not recognized. Try 'help'.\n`) : cb(`NOLINE`));
   } catch (e) {
     console.warn(e);
-    cb(`Error: ${e}\nError: ${e}\n`);
+    cb(`Napaka: ${e}\nError: ${e}\n`);
   }
 };
 

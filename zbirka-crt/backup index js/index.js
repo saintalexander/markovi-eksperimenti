@@ -36,23 +36,30 @@ const jezik = (sl) => {
   return (slo ? helpTextSlo : helpTextEn);
 }
 
-var banner = `
-« UMA MUSK PRESENTS »
-
-▒█▀▀▄ ▀█▀ ▒█░░▒█ ▀█▀ ▒█▄░▒█ ▀█▀ ▀▀█▀▀ ▒█░░▒█ 
-▒█░▒█ ▒█░ ░▒█▒█░ ▒█░ ▒█▒█▒█ ▒█░ ░▒█░░ ▒█▄▄▄█ 
-▒█▄▄▀ ▄█▄ ░░▀▄▀░ ▄█▄ ▒█░░▀█ ▄█▄ ░▒█░░ ░░▒█░░
-
-<img src="https://example.com/your-image.jpg" alt="Banner Image">`;
+var banner = ` 
+          ohNh+               +hNh+          
+         'MMMMM              'MMMMN          
+          -omMMdo/sddo/sddo/sdMMd+-          
+       '    sMMMMNMMMMMMMMMNMMMMo    '       
+     /ydy//yNMMy/-+yMMMMMy/-+yMMms:/sds:     
+     MMMMMMMMMN     MMMMM     MMMMMMMMMN     
+  .+hMMms::smMMh+-+hMMMMMh+-+hMMms:/smMMh+.  
+  oMMMM+    oMMMMMMMMMMMMMMMMMMMo    oMMMMo  
+:omMMho.  :omMMho:ohho:ohho:ohMMmo:  .ohMMmo:
+MMMMM     NMMMM              'MMMMN    'MMMMM
++ymy/     +yNMMs/'         '/sMMNy/     /ymy+
+  '         sMMMM+         oMMMMo         '  
+            -smms.         -smms-            
+`;
 
 const helpTextSlo = `
-Commands:
-* find <keyword> - Lists item IDs matching the keywords.
-* item <id> - Displays details about an item.
-* exhibitions [id] - List all exibitions or details of one specified by ID.
-* stats - Displays collection statistics.
-* clear - Clears the screen.
-* SVENSKA - Byt språk till Svenska. (OBS: Inmatningar ännu ej översatta.)`;
+Ukazi:
+* najdi <beseda> - Izpiše IDje eksponatov, ki vsebujejo iskane besede.
+* eksponat <id> - Izpiše podatke o eksponatu.
+* razstave [id] - Izpiše seznam razstav; če je naveden ID, pa info o razstavi.
+* statistika - Izpiše statistiko celotne zbirke.
+* pocisti - Počisti zaslon.
+* ENGLISH - Switch to English language. (NOTE: Entries not yet translated.)`;
 
 const helpTextEn = `
 Commands:
@@ -61,7 +68,7 @@ Commands:
 * exhibitions [id] - List all exibitions or details of one specified by ID.
 * stats - Displays collection statistics.
 * clear - Clears the screen.
-* ENGLISH - Switch to English language. (NOTE: Entries not yet translated.)`;
+* SLOVENSKI - Preklopi na slovenščino.`;
 
 var vec = '';
 var fotka = '';
@@ -151,7 +158,7 @@ const razstave2 = (t, url) => {
       }
       t.print(out, false);
     } catch (e) {
-      t.print((slo ? "Exhibition with this ID not found." : "Exhibition with this ID not found."), false);
+      t.print((slo ? "Razstava s tem ID ne obstaja." : "Exhibition with this ID not found."), false);
     }
   };
 
@@ -163,7 +170,7 @@ const vec2 = (t) => {
   if (vec) {
     return (vec.includes('/api/eksponati/') ? najdi2(t, proxy(vec)) : razstave2(t, proxy(vec)));
   } else {
-    return (slo ? 'No more results.' : 'No more results.');
+    return (slo ? 'Ni več zadetkov.' : 'No more results.');
   }
 }
 
@@ -219,12 +226,12 @@ const load = () => {
               "\nKindly donated by ") + obj.donator.replace(',', '');
             if (obj.fotografija) {
               fotka = obj.fotografija;
-              out += (slo ? "\n(A photo of this item is available - type 'photo' to display it)" : "\n(A photo of this item is available - type 'photo' to display it)");
+              out += (slo ? "\n(Na voljo je fotografija eksponata - za prikaz napišite 'fotka')" : "\n(A photo of this item is available - type 'photo' to display it)");
             }
             out += "\n";
             t.print(out, false);
           } catch (e) {
-            t.print((slo ? "Item with this ID not found." : "Item with this ID not found."), false);
+            t.print((slo ? "Eksponat s tem ID ne obstaja." : "Item with this ID not found."), false);
           }
         };
 
@@ -246,7 +253,7 @@ const load = () => {
             }
             t.print(out, false);
           } catch (e) {
-            t.print((slo ? "An error occured" : "Ett fel uppstod"), false);
+            t.print((slo ? "Prišlo je do napake." : "An error occured"), false);
           }
         };
 
@@ -260,7 +267,7 @@ const load = () => {
           window.open(fotka);
           return 'NOLINE';
         } else {
-          return (slo ? 'Photo is not available.' : 'Foto ej tillgänglig.');
+          return (slo ? 'Fotografija ni na voljo.' : 'Photo is not available.');
         }
       },
       format: () => {
@@ -268,10 +275,10 @@ const load = () => {
         return 'NOLINE';
       },
       rm: () => self.format(),
-      svenska: () => {
+      english: () => {
         return jezik(false);
       },
-      english: () => {
+      slovenski: () => {
         return jezik(true);
       },
       find: (...geslo) => self.najdi(...geslo),
@@ -281,11 +288,7 @@ const load = () => {
       photo: () => self.fotka(),
       clear: () => self.pocisti(),
       more: () => self.vec(),
-      help: () => self.english(), 
-      banner: () => {
-        t.print(banner, false);
-        return 'NOLINE';
-      }
+      help: () => self.english()
     }
   });
 

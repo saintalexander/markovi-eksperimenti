@@ -1,4 +1,4 @@
-/**
+/*!
  * AnderShell - Just a small CSS demo
  *
  * Copyright (c) 2011-2018, Anders Evenrud <andersevenrud@gmail.com>
@@ -25,10 +25,9 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-@media (max-width: 1280px) {
-  #crt {
-    width: 100vw;
-    height: 100vh;
-    font-size: $font-size / 2;
-  }
-}
+@import "fonts";
+@import "variables";
+@import "layout";
+@import "crt";
+@import "animations";
+@import "responsive";

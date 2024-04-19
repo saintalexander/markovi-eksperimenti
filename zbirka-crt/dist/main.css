@@ -283,7 +283,6 @@ body {
   font-size: inherit;
   line-height: 1.25;
   white-space: pre-wrap;
-  animation: myanim 3s infinite;
 }
 
 #ga, #info {
@@ -293,15 +292,8 @@ body {
   font-weight: bold;
   font-size: inherit;
   line-height: 1.25;
-  animation: myanim 3s infinite;
 }
 
-@keyframes myanim {
-  30% {
-    color: #fff;
-    text-shadow: 0 0 15px rgba(245, 245, 245, 0.01), 0 0 10px rgba(245, 245, 245, 0.01);
-  }
-}
 /**
  * AnderShell - Just a small CSS demo
  *

@@ -130,7 +130,7 @@
     font-size: inherit;
     line-height: $output-line-height;
     white-space: pre-wrap;
-    animation: myanim 3s infinite;
+    // animation: myanim 3s infinite;
   
   }
   
@@ -144,10 +144,10 @@
   font-size: inherit;
   line-height: $output-line-height;
   // white-space: pre-wrap;
-  animation: myanim 3s infinite;
+  // animation: myanim 3s infinite;
 }
-@keyframes myanim {
-  30% {color: #fff;
-     text-shadow: 0 0 15px rgba(245,245,245,.01), 0 0 10px rgba(245,245,245,.01);
-  }
-}
+// @keyframes myanim {
+//   30% {color: #fff;
+//      text-shadow: 0 0 15px rgba(245,245,245,.01), 0 0 10px rgba(245,245,245,.01);
+//   }
+// }

@@ -678,7 +678,7 @@ var terminal = function terminal(opts) {
     var lines = _output.split(/\n/);
     if (center) {
       lines = lines.map(function (line) {
-        return line.length > 0 ? line.padStart(line.length + (cwidth / 1.8 - line.length / 1.8), ' ') : line;
+        return line.length > 0 ? line.padStart(line.length + (cwidth / 2 - line.length / 2), ' ') : line;
       });
     }
     var append = (lines.join('\n').replace('NOPROMPT\n', '') + '\n' + (!lines.includes('NOPROMPT') && !center ? prompt() : '')).replace('NOLINE\n', '');

@@ -163,7 +163,7 @@ export const terminal = (opts) => {
     let lines = output.split(/\n/);
     if (center) {
       lines = lines.map(line => line.length > 0
-        ? line.padStart(line.length + ((cwidth / 1.8) - (line.length / 1.8)), ' ')
+        ? line.padStart(line.length + ((cwidth / 2) - (line.length / 2)), ' ')
         : line);
     }
 

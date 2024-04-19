@@ -28,7 +28,7 @@
   margin-left: $chassis-margin / 2;
   background: #1b1b1b;
   border-radius: $base-unit;
-  overflow: hidden;
+  // overflow: hidden;
   box-shadow: 0 0 1px 3px rgba(28, 28, 28, 0.7);
 
   &::before {
@@ -109,6 +109,7 @@
   z-index: 50;
 
   textarea {
+    overflow-y: scroll;  // Ensures vertical scrolling is enabled
 
     display: block;
     background: transparent;
@@ -121,7 +122,7 @@
     // pointer-events: none;
     margin: 0;
     // overflow: hidden;
-    overflow: auto;
+    // overflow: auto;
     padding: $base-unit;
     color: $output-color;
     text-shadow: 0 0 2px $output-text-shadow;
@@ -143,7 +144,7 @@
   font-weight: bold;
   font-size: inherit;
   line-height: $output-line-height;
-  // white-space: pre-wrap;
+  white-space: pre-wrap;
   // animation: myanim 3s infinite;
 }
 // @keyframes myanim {

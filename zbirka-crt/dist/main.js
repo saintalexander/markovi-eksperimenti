@@ -703,8 +703,12 @@ var terminal = function terminal(opts) {
     }, 1);
   };
   var kbd = keyboard($element, prompt, parse);
+  // const clear = () => ($element.value = output(banner, true) + '');
   var clear = function clear() {
-    return $element.value = '';
+    $element.value = null;
+    output(banner, true);
+    return 'NOLINE';
+    // this needs fixing
   };
   var input = function input(ev) {
     return busy ? ev.preventDefault() : kbd[ev.type](ev);

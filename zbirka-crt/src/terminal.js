@@ -179,7 +179,17 @@ export const terminal = (opts) => {
   const parse = parser(onparsed);
   const focus = () => setTimeout(() => $element.focus(), 1);
   const kbd = keyboard($element, prompt, parse);
-  const clear = () => ($element.value = '');
+  // const clear = () => ($element.value = output(banner, true) + '');
+  const clear = () => {
+    
+    $element.value = null; 
+    output(banner, true);
+    return 'NOLINE';
+    // this needs fixing
+
+};
+
+
   const input = ev => busy
     ? ev.preventDefault()
     : kbd[ev.type](ev);

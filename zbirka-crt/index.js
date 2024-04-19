@@ -277,24 +277,12 @@ document.addEventListener('DOMContentLoaded', load);
 document.addEventListener('DOMContentLoaded', () => {
   const adjustTerminalHeight = () => {
     const terminal = document.getElementById('crt'); // Access the terminal by its ID
-    terminal.style.height = window.innerHeight + 'px'; // Set its height to the inner height of the window
+    const keyboardHeight = window.innerHeight - document.documentElement.clientHeight; // Calculate keyboard height
+    terminal.style.height = (window.innerHeight - keyboardHeight) + 'px'; // Adjust terminal height
   };
 
-  // Function to adjust height when the keyboard is shown
-  const adjustHeightOnKeyboardShow = () => {
-    const originalHeight = window.innerHeight;
-    window.addEventListener('resize', () => {
-      if (window.innerHeight < originalHeight) {
-        // Keyboard is open, adjust terminal height
-        adjustTerminalHeight();
-      }
-    });
-  };
-
-  // Adjust height on initial load
+  // Adjust terminal height on initial load
   adjustTerminalHeight();
-
-  // Adjust height when keyboard is shown
-  adjustHeightOnKeyboardShow();
 });
+
 

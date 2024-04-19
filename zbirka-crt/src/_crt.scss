@@ -142,7 +142,8 @@
     box-sizing: border-box;
     pointer-events: none;
     margin: 0;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow: auto;
     padding: $base-unit;
     color: $output-color;
     text-shadow: 0 0 2px $output-text-shadow;

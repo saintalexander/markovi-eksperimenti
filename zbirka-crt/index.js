@@ -298,3 +298,13 @@ const load = () => {
 };
 
 document.addEventListener('DOMContentLoaded', load);
+document.addEventListener('DOMContentLoaded', () => {
+  const adjustTerminalHeight = () => {
+      const terminal = document.getElementById('crt'); // Access the terminal by its ID
+      terminal.style.height = window.innerHeight + 'px'; // Set its height to the inner height of the window
+  };
+
+  // Adjust height on resize and on initial load
+  window.addEventListener('resize', adjustTerminalHeight);
+  adjustTerminalHeight(); // Call it once on initial load to set the height
+});

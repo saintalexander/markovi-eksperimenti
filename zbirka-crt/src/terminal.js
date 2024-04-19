@@ -101,7 +101,7 @@ const executor = commands => (cmd, ...args) => cb => {
   try {
     commands[cmd]
       ? cb(commands[cmd](...args) + '\n')
-      : (cmd.length ? cb(`Command '${cmd}' not recognized. Try 'help'.\nCommand '${cmd}' not recognized. Try 'help'.\n`) : cb(`NOLINE`));
+      : (cmd.length ? cb(`\nCommand '${cmd}' not recognized. Try 'help'.\n`) : cb(`NOLINE`));
   } catch (e) {
     console.warn(e);
     cb(`Error: ${e}\nError: ${e}\n`);
@@ -157,7 +157,7 @@ export const terminal = (opts) => {
   const $element = createElement($root);
   const fontSize = getFontSize($element);
   const width = $element.offsetWidth;
-  const cwidth = Math.round((width / fontSize) * 1.6); // FIXME: Should be calculated via canvas
+  const cwidth = Math.round((width / fontSize) * 1.9); // FIXME: Should be calculated via canvas
 
   const output = (output, center) => {
     let lines = output.split(/\n/);

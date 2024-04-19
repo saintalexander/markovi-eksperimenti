@@ -15,11 +15,11 @@ const jezik = (sl) => {
 var banner = `
 « UMA MUSK PRESENTS »
 
-▒█▀▀▄ ▀█▀ ▒█░░▒█ ▀█▀ ▒█▄░▒█ ▀█▀ ▀▀█▀▀ ▒█░░▒█ 
-▒█░▒█ ▒█░ ░▒█▒█░ ▒█░ ▒█▒█▒█ ▒█░ ░▒█░░ ▒█▄▄▄█ 
-▒█▄▄▀ ▄█▄ ░░▀▄▀░ ▄█▄ ▒█░░▀█ ▄█▄ ░▒█░░ ░░▒█░░
+▒█▀▀▄ ▀█▀ ▒█░░▒█ ▀█▀ ▒█▄░▒█ ▀█▀ ▀▀█▀▀ ▒█░░▒█        
+▒█░▒█ ▒█░ ░▒█▒█░ ▒█░ ▒█▒█▒█ ▒█░ ░▒█░░ ▒█▄▄▄█        
+▒█▄▄▀ ▄█▄ ░░▀▄▀░ ▄█▄ ▒█░░▀█ ▄█▄ ░▒█░░ ░░▒█░░        
 
-<img src="https://example.com/your-image.jpg" alt="Banner Image">`;
+<img src="https://exampl`;
 
 const helpTextSlo = `
 Commands:

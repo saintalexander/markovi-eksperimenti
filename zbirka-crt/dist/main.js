@@ -108,7 +108,7 @@ var jezik = function jezik(sl) {
   slo = sl;
   return slo ? helpTextSlo : helpTextEn;
 };
-var _banner = "\n\xAB UMA MUSK PRESENTS \xBB\n\n\u2592\u2588\u2580\u2580\u2584 \u2580\u2588\u2580 \u2592\u2588\u2591\u2591\u2592\u2588 \u2580\u2588\u2580 \u2592\u2588\u2584\u2591\u2592\u2588 \u2580\u2588\u2580 \u2580\u2580\u2588\u2580\u2580 \u2592\u2588\u2591\u2591\u2592\u2588        \n\u2592\u2588\u2591\u2592\u2588 \u2592\u2588\u2591 \u2591\u2592\u2588\u2592\u2588\u2591 \u2592\u2588\u2591 \u2592\u2588\u2592\u2588\u2592\u2588 \u2592\u2588\u2591 \u2591\u2592\u2588\u2591\u2591 \u2592\u2588\u2584\u2584\u2584\u2588        \n\u2592\u2588\u2584\u2584\u2580 \u2584\u2588\u2584 \u2591\u2591\u2580\u2584\u2580\u2591 \u2584\u2588\u2584 \u2592\u2588\u2591\u2591\u2580\u2588 \u2584\u2588\u2584 \u2591\u2592\u2588\u2591\u2591 \u2591\u2591\u2592\u2588\u2591\u2591        \n\n<img src=\"https://exampl";
+var _banner = "\n\xAB UMA MUSK PRESENTS \xBB\n\n\u2592\u2588\u2580\u2580\u2584 \u2580\u2588\u2580 \u2592\u2588\u2591\u2591\u2592\u2588 \u2580\u2588\u2580 \u2592\u2588\u2584\u2591\u2592\u2588 \u2580\u2588\u2580 \u2580\u2580\u2588\u2580\u2580 \u2592\u2588\u2591\u2591\u2592\u2588\n\u2592\u2588\u2591\u2592\u2588 \u2592\u2588\u2591 \u2591\u2592\u2588\u2592\u2588\u2591 \u2592\u2588\u2591 \u2592\u2588\u2592\u2588\u2592\u2588 \u2592\u2588\u2591 \u2591\u2592\u2588\u2591\u2591 \u2592\u2588\u2584\u2584\u2584\u2588\n\u2592\u2588\u2584\u2584\u2580 \u2584\u2588\u2584 \u2591\u2591\u2580\u2584\u2580\u2591 \u2584\u2588\u2584 \u2592\u2588\u2591\u2591\u2580\u2588 \u2584\u2588\u2584 \u2591\u2592\u2588\u2591\u2591 \u2591\u2591\u2592\u2588\u2591\u2591\n\n<img src=\"https://exampl";
 var helpTextSlo = "\nCommands:\n* find <keyword> - Lists item IDs matching the keywords.\n* item <id> - Displays details about an item.\n* exhibitions [id] - List all exibitions or details of one specified by ID.\n* stats - Displays collection statistics.\n* clear - Clears the screen.\n* SVENSKA - Byt spr\xE5k till Svenska. (OBS: Inmatningar \xE4nnu ej \xF6versatta.)";
 var helpTextEn = "\nCommands:\n* find <keyword> - Lists item IDs matching the keywords.\n* item <id> - Displays details about an item.\n* exhibitions [id] - List all exibitions or details of one specified by ID.\n* stats - Displays collection statistics.\n* clear - Clears the screen.\n* ENGLISH - Switch to English language. (NOTE: Entries not yet translated.)";
 var vec = '';
@@ -672,13 +672,13 @@ var terminal = function terminal(opts) {
   var $element = createElement($root);
   var fontSize = getFontSize($element);
   var width = $element.offsetWidth;
-  var cwidth = Math.round(width / fontSize * 1.9); // FIXME: Should be calculated via canvas
+  var cwidth = Math.round(width / fontSize * 1.6); // FIXME: Should be calculated via canvas
 
   var output = function output(_output, center) {
     var lines = _output.split(/\n/);
     if (center) {
       lines = lines.map(function (line) {
-        return line.length > 0 ? line.padStart(line.length + (cwidth / 2 - line.length / 2), ' ') : line;
+        return line.length > 0 ? line.padStart(line.length + (cwidth / 1.6 - line.length / 1.6), ' ') : line;
       });
     }
     var append = (lines.join('\n').replace('NOPROMPT\n', '') + '\n' + (!lines.includes('NOPROMPT') && !center ? prompt() : '')).replace('NOLINE\n', '');

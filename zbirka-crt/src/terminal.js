@@ -157,13 +157,13 @@ export const terminal = (opts) => {
   const $element = createElement($root);
   const fontSize = getFontSize($element);
   const width = $element.offsetWidth;
-  const cwidth = Math.round((width / fontSize) * 1.9); // FIXME: Should be calculated via canvas
+  const cwidth = Math.round((width / fontSize) * 1.6); // FIXME: Should be calculated via canvas
 
   const output = (output, center) => {
     let lines = output.split(/\n/);
     if (center) {
       lines = lines.map(line => line.length > 0
-        ? line.padStart(line.length + ((cwidth / 2) - (line.length / 2)), ' ')
+        ? line.padStart(line.length + ((cwidth / 1.6) - (line.length / 1.6)), ' ')
         : line);
     }
 

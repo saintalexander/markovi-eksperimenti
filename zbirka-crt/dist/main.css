@@ -380,7 +380,7 @@ body {
 @media (max-width: 1280px) {
   #crt {
     width: 100vw;
-    height: 50%;
+    height: 60vh;
     font-size: 10px;
   }
   body {

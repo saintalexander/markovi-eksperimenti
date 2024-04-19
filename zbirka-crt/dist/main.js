@@ -364,29 +364,16 @@ var load = function load() {
   };
 };
 document.addEventListener('DOMContentLoaded', load);
-document.addEventListener('DOMContentLoaded', function () {
-  var adjustTerminalHeight = function adjustTerminalHeight() {
-    var terminal = document.getElementById('crt'); // Access the terminal by its ID
-    terminal.style.height = window.innerHeight + 'px'; // Set its height to the inner height of the window
-  };
+// document.addEventListener('DOMContentLoaded', () => {
+//   const adjustTerminalHeight = () => {
+//     const terminal = document.getElementById('crt'); // Access the terminal by its ID
+//     const keyboardHeight = window.innerHeight - document.documentElement.clientHeight; // Calculate keyboard height
+//     terminal.style.height = (window.innerHeight - keyboardHeight) + 'px'; // Adjust terminal height
+//   };
 
-  // Function to adjust height when the keyboard is shown
-  var adjustHeightOnKeyboardShow = function adjustHeightOnKeyboardShow() {
-    var originalHeight = window.innerHeight;
-    window.addEventListener('resize', function () {
-      if (window.innerHeight < originalHeight) {
-        // Keyboard is open, adjust terminal height
-        adjustTerminalHeight();
-      }
-    });
-  };
-
-  // Adjust height on initial load
-  adjustTerminalHeight();
-
-  // Adjust height when keyboard is shown
-  adjustHeightOnKeyboardShow();
-});
+//   // Adjust terminal height on initial load
+//   adjustTerminalHeight();
+// });
 
 /***/ }),
 

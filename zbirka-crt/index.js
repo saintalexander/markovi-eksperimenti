@@ -274,15 +274,15 @@ const load = () => {
 };
 
 document.addEventListener('DOMContentLoaded', load);
-document.addEventListener('DOMContentLoaded', () => {
-  const adjustTerminalHeight = () => {
-    const terminal = document.getElementById('crt'); // Access the terminal by its ID
-    const keyboardHeight = window.innerHeight - document.documentElement.clientHeight; // Calculate keyboard height
-    terminal.style.height = (window.innerHeight - keyboardHeight) + 'px'; // Adjust terminal height
-  };
+// document.addEventListener('DOMContentLoaded', () => {
+//   const adjustTerminalHeight = () => {
+//     const terminal = document.getElementById('crt'); // Access the terminal by its ID
+//     const keyboardHeight = window.innerHeight - document.documentElement.clientHeight; // Calculate keyboard height
+//     terminal.style.height = (window.innerHeight - keyboardHeight) + 'px'; // Adjust terminal height
+//   };
 
-  // Adjust terminal height on initial load
-  adjustTerminalHeight();
-});
+//   // Adjust terminal height on initial load
+//   adjustTerminalHeight();
+// });
 
 

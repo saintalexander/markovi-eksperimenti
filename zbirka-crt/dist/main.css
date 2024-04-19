@@ -295,7 +295,6 @@ body {
   border: 0 none;
   outline: 0 none;
   box-sizing: border-box;
-  pointer-events: none;
   margin: 0;
   overflow: auto;
   padding: 1em;

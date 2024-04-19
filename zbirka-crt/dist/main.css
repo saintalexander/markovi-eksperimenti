@@ -380,11 +380,11 @@ body {
 @media (max-width: 1280px) {
   #crt {
     width: 100vw;
-    height: 55vh;
+    height: 50vh;
     font-size: 10px;
   }
   body {
-    align-items: baseline;
+    align-items: center;
   }
 }
 

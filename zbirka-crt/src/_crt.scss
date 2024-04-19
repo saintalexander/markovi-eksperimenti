@@ -109,13 +109,14 @@
   z-index: 50;
 
   textarea {
-    overflow-y: scroll;  // Ensures vertical scrolling is enabled
+    overflow:visible !important;
+
 
     display: block;
     background: transparent;
     resize: none;
     width: 100%;
-    height: 90%;
+    height: 85%;
     border: 0 none;
     outline: 0 none;
     box-sizing: border-box;
@@ -144,7 +145,6 @@
   font-weight: bold;
   font-size: inherit;
   line-height: $output-line-height;
-  white-space: pre-wrap;
   // animation: myanim 3s infinite;
 }
 // @keyframes myanim {

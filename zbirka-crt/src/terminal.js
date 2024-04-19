@@ -6,7 +6,8 @@
 const createOptions = opts => Object.assign({}, {
   banner: 'Hello World',
   prompt: () => '$ > ',
-  tickrate: 1000 / 60,
+  tickrate: 1000 / 20,
+  // tickrate: 1000 / 60, (original tickrate)
   buflen: 8,
   commands: {}
 }, opts || {});
